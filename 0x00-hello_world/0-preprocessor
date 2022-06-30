@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -E main.c>c && export CFILE=main.c
+gcc -E -Wall -Werror -Wextra -pedantic -std=gnu89 main.c>c && export CFILE=main.c
