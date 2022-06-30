@@ -1,7 +1,7 @@
 #include <unistd.h>
 /**
- * This code 
- * displays a quote
+ * main - main block 
+ * Return:0
  * */
 int main(void)
 {

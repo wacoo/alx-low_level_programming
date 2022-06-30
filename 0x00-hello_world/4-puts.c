@@ -1,11 +1,9 @@
 #include <stdio.h>
+
 /**
- *
- * This program prints
- *
- * a quote about proogramming.
- *
- **/
+ * main - main block
+ * Return: 0
+ */
 int main(void)
 {
 	puts("\"Programming is like building a multilingual puzzle");
