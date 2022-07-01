@@ -5,48 +5,40 @@
  */
 int main(void)
 {
-	int i;
-	int j;
-	int k;
-	int l;
+	int p = 48, q = 48, y = 48, x = 49;
 
-	i = 0;
-	j = 0;
-	k = 0;
-	l = 0;
-	while (i < 10)
+	while (p < 58)
 	{
-		while (j < 10)
+		while (q < 58)
 		{
-			while (k < 10)
+			while (y < 58)
 			{
-				while (l < 10)
+				while (x < 58)
 				{
-					if (!(i == k && j == l))
+					putchar(p);
+					putchar(q);
+					putchar(' ');
+					putchar(y);
+					putchar(x);
+					if (!(p == 57 && q == 56 && y == 57 && x == 57))
 					{
-						putchar(i + 48);
-						putchar(j + 48);
+						putchar(',');
 						putchar(' ');
-						putchar(k + 48);
-						putchar(l + 48);
-						if (!(i == 9 && j == 9 && k == 9 && l == 8))
-						{
-							putchar(',');
-							putchar(' ');
-						}
 					}
-					l++;
+					x++;
 				}
-				k++;
-				l = 0;
+				y++;
+				x = 48;
 			}
-			j++;
-			k = 0;
+			q++;
+			q = p;
+			x = q + 1;
 		}
-		i++;
-		j = 0;
-
+		p++;
+		q = 48;
+		y = p;
+		x = q + 1;
 	}
-	putchar('\n');	
+	putchar('\n');
 	return (0);
 }

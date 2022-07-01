@@ -14,7 +14,7 @@ int main(void)
 	{
 		while (j < 10)
 		{
-			if(i != j && i < j)
+			if (i != j && i < j)
 			{
 				putchar(i + 48);
 				putchar(j + 48);
@@ -26,7 +26,7 @@ int main(void)
 			}
 			j++;
 		}
-		j=0;
+		j = 0;
 		i++;
 	}
 	putchar('\n');
