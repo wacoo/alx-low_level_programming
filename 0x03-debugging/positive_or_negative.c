@@ -1,6 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+#include "main.h"
 /**
  * positive_or_negative - checks is a number is + or -
  * @n: the number to be checked
