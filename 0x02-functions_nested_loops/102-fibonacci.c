@@ -10,11 +10,11 @@ int main(void)
 
 	num1 = 0;
 	num2 = 1;
-	i=0;
+	i = 0;
 
 	nextNum = num1 + num2;
 	printf("%ld, %ld, ", num1, num2);
-	while (i< 48)
+	while (i < 48)
 	{
 		printf("%ld", nextNum);
 		if (i < 47)

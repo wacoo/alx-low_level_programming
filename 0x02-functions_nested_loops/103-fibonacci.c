@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main - prints the sum of even valued terms in fibanacci sequence. 
+ * main - prints the sum of even valued terms in fibanacci sequence.
  *
  * Return: 0
  */
@@ -20,7 +20,6 @@ int main(void)
 		num1 = num2;
 		num2 = nextNum;
 		nextNum = num1 + num2;
-		
 	}
 	printf("%d\n", sum);
 	return (0);

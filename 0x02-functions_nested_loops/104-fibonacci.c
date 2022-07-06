@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main - prints the sum of even valued terms in fibanacci sequence. 
+ * main - prints the sum of even valued terms in fibanacci sequence.
  *
  * Return: 0
  */
@@ -21,5 +21,5 @@ int main(void)
 		i++;
 	}
 	putchar('\n');
-	return (0);	
+	return (0);
 }
