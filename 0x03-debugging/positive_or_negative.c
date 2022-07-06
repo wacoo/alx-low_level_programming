@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 /**
- * main - Entry point of the program
- * @n:
+ * positive_or_negative - checks is a number is + or -
+ * @n: the number to be checked
  * Return: 0
  */
 void positive_or_negative(int n)
