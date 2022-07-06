@@ -1,5 +1,5 @@
 #include <stdio.h>
-/** 
+/**
  * main - adds all natural nubers multiple of 3 and 5 below 1024
  *
  * Return: 0
@@ -13,7 +13,7 @@ int main(void)
 	{
 		if (i % 3 == 0 || i % 5 == 0)
 		{
-			sum+=i;
+			sum += i;
 		}
 		i++;
 	}
