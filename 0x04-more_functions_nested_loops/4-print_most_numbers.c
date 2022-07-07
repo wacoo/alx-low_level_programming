@@ -13,7 +13,7 @@ void print_most_numbers(void)
 	{
 		if (i  == 2 + '0' || i == 4 + '0')
 		{
-			
+
 		}
 		else
 		{
