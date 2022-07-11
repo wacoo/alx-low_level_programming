@@ -8,16 +8,17 @@
 
 void print_rev(char *str)
 {
-	char *firstCharPos = str;
+	int i;
 
-	while (*str != '\0')
+	i = 0;
+	while (str[i] != '\0')
 	{
-		str += sizeof(char);
+		i++;
 	}
-	while (str != (firstCharPos - sizeof(char)))
+	while (i > 0)
 	{
-		_putchar(*str);
-		str -= sizeof(char);
+		_putchar(str[i - 1]);
+		i--;
 	}
 	_putchar('\n');
 }
