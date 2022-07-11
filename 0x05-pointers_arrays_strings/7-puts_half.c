@@ -12,27 +12,22 @@ void puts_half(char *str)
 
 	c = 0, half = 0;
 	str2 = str;
-	while (*str != '\0')
+	while (str[c] != '\0')
 	{
-		str += sizeof(char);
 		c++;
 	}
 	if (c % 2 == 0)
 	{
 		half = c / 2;
 	}
-	else
+	else if (c % 2)
 	{
 		half = (c - 1) / 2;
 	}
-	c = 0;
-	while (*str2 != '\0')
+	c = half;
+	while (str2[c] != '\0')
 	{
-		if (c >= half)
-		{
-			_putchar(*str2);
-		}
-		str2 += sizeof(char);
+		_putchar(str2[c]);
 		c++;
 	}
 	_putchar('\n');

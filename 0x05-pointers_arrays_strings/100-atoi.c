@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * _atoi - extracts numbers from string
- * @s: string
+ * _isdigit - checks if a character is number
+ * @c: character
  *
- * Return: extracted number
+ * Return: 1 or 0
  */
 int _isdigit(char c)
 {
@@ -17,6 +17,13 @@ int _isdigit(char c)
 		return (0);
 	}
 }
+/**
+ * _atoi - extracts number from string
+ * @s: string
+ *
+ * Return: extracted number
+ *
+ */
 int _atoi(char *s)
 {
 	int i;
