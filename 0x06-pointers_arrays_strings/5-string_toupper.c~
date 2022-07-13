@@ -1,0 +1,19 @@
+#include "main.h"
+
+/**
+ * string_toupper - changes small chars to big in string
+ * @n: string
+ * *
+ * Return: changed string
+ *
+ */
+int string_toupper(char *n)
+{
+	int i = 0;
+
+	while (n[i] != '\0')
+	{
+		i++;
+	}
+	return (0);
+}
