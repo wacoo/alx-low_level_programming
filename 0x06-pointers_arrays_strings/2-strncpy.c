@@ -19,7 +19,7 @@ char *_strncpy(char *dest, char *src, int n)
 		dest++;
 		count++;
 	}
-	if ((count) < n)
+	if ((count + 1) < n)
 	{
 		*dest = '\n';
 	}
