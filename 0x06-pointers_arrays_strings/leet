@@ -1,0 +1,32 @@
+#include "main.h"
+
+/**
+ * leet - replaces some char in a string numbers
+ * @s: string given
+ *
+ * Return: changed string
+ */
+char *leet(char *s)
+{
+	int j, i = 0;
+	char *t = s + (sizeof(s) * sizeof(char));
+	char lchar[] = {'a', 'e', 'o', 't', 'l'};
+	char uchar[] = {'A', 'E', 'O', 'T', 'L'};
+	char rep[] = {'4', '3', '0', '7', '1'};
+
+	while (s[i] != '\0')
+	{
+		j = 0;
+		t[i] = s[i];
+		while (j < 5)
+		{
+			if (s[i] == (lchar[j] || uchar[j]))
+			{
+				t[i] = rep[j];
+			}
+			j++;	
+		}
+		i++;
+	}
+	return (t);
+}

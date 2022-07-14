@@ -1,0 +1,42 @@
+#include "main.h"
+
+int isWord(char *x)
+{
+  if (s[c] == ' ' || s[c] == '\t' || s[c] == ',' s[c] == '\'' || s[c] == ';' || s[c] == ',' || s[c] == '.' || s[c] == '!' || s[c] == '\?' || s[c] == '\"' || s[c] == '(' || s[c] == ')' || s[c] == '{' || s[c] == '}')
+}
+/**
+ * cap_string - capitalized the first letter of a word in string.
+ * @s: string
+ *
+ * Return: changed string.
+ *
+ */
+
+char *cap_string(char *s)
+{
+	int i = 0;
+	char c = 0;
+	int i = 0, j;
+	char lower[26], upper[26];
+
+	for (i = 0; i < 26; i++)
+	  {
+	    lower[i] = i + 97;
+	    upper[i] = i + 65;
+	  }
+	i = 0;
+	while (s[i] != '\0')
+	  {
+	    if (i > 0)
+	      {
+		c = s[i - 1];
+
+	      }
+
+	    if ((s[c] == ' ' || s[c] == '\t' || s[c] == ',' s[c] == '\'' || s[c] == ';' || s[c] == ',' || s[c] == '.' || s[c] == '!' || s[c] == '\?' || s[c] == '\"' || s[c] == '(' || s[c] == ')' || s[c] == '{' || s[c] == '}') && (s[i] < 123 && n[i] > 96))
+	      {
+		
+
+	      }
+	return (s);
+}

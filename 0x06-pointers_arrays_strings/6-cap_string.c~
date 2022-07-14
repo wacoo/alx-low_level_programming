@@ -1,0 +1,29 @@
+#include "main.h"
+
+/**
+ * cap_string - capitalized the first letter of a word in string.
+ * @s: string
+ *
+ * Return: changed string.
+ *
+ */
+
+char *cap_string(char *s)
+{
+	int i = 0;
+	char c = 0;
+	while (s[i] != '\0')
+	{
+		if (i > 0)
+		{
+			c = s[i - 1];
+
+		}
+		if (s[c] == ' ' || s[c] == '\t' || s[c] == ',' s[c] == '\'' || s[c] == ';' ||s[c] == ',' || s[c] == '.' || s[c] == '!' || s[c] == '\?' || s[c] == '\"' || s[c] == '(' || s[c] == ')' || s[c] == '{' || s[c] == '}')
+		{
+			s[i] =;
+		}
+		
+	}
+	return (s);
+}
