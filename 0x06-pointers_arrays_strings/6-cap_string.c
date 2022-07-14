@@ -1,75 +1,24 @@
 #include "main.h"
+
 /**
- * isWord - checks if char is start of a word
- * @c: character
+ * *cap_string - this is awesome
+ * @s: pointer to char params
  *
- * Return: 0 or 1
- */
-int isWord(char c)
-{
-	switch (c)
-	{
-		case '\n':
-		case '.':
-		case ',':
-		case '\'':
-		case '\"':
-		case '\t':
-		case ' ':
-		case '!':
-		case '?':
-		case '{':
-		case '}':
-		case '(':
-		case ')':
-		case ';':
-			return (1);
-		default:
-			return (0);
-	}
-}
-/**
- * cap_string - capitalized the first letter of a word in string.
- * @s: string
- *
- * Return: changed string.
- *
+ * Return: *s
  */
 
 char *cap_string(char *s)
 {
-	int j, i = 0;
-	char lower[26], upper[26];
-	unsigned char c = 0;
+	int i, j;
+	char d[] = " \t\n,;.!?\"(){}";
 
-	for (i = 0; i < 26; i++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		lower[i] = i + 97;
-		upper[i] = i + 65;
-	}
-	i = 0;
-	while (s[i] != '\0')
-	{
-		if (i > 0)
-		{
-			c = i - 1;
-
-		}
-
-		if (isWord((char) s[c]) && (s[i] < 123 && s[i] > 96))
-		{
-			j = 0;
-			while (j < 26)
-			{
-
-				if (s[i] == lower[j])
-				{
-					s[i] = upper[j];
-				}
-				j++;
-			}
-		}
-		i++;
+		if (s[0] >= 97 && s[0] <= 122)
+			s[0] = s[0] - 32;
+				for (j = 0; d[j] != '\0'; j++)
+					if (s[i] == d[j] && s[i + 1] >= 97 && s[i + 1] <= 122)
+						s[i + 1] = s[i + 1] - 32;
 	}
 	return (s);
 }

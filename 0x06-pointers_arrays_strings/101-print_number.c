@@ -1,46 +1,26 @@
 #include "main.h"
+
 /**
- * print_number - prints integer
- * @n: integer given
- *
- */
+  * print_number - prints numbers chars
+  * @n: integer params
+  * Return: 0
+ **/
 
 void print_number(int n)
 {
-	int t[20], i = 0;
-	
+	unsigned int n1;
+
+	n1 = n;
+
 	if (n < 0)
 	{
-		n *= -1;
-		while (n != 0)
-		{
-			t[i] = n % 10;
-			n /= 10;
-			i++;
-		}
 		_putchar('-');
-		while (i > 0)
-		{
-			i--;
-			_putchar(t[i] + '0');
-                }
+		n1 = -n;
 	}
-	else if(n == 0)
+
+	if (n1 / 10 != 0)
 	{
-		_putchar('0');
+		print_number(n1 / 10);
 	}
-	else
-	{
-		while (n != 0)
-		{
-			t[i] = n % 10;
-			n /= 10;
-			i++;
-		}
-		while (i > 0)
-		{
-			i--;
-			_putchar(t[i] + '0');
-		}
-	}
+	_putchar((n1 % 10) + '0');
 }
