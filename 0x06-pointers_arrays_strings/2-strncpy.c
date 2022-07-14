@@ -3,6 +3,7 @@
  * _strncpy - copies from source to destination
  * @dest: destination
  * @src: source
+ * @n: number
  *
  * Return: destination string
  */
