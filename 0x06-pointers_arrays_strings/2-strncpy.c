@@ -18,7 +18,7 @@ char *_strncpy(char *dest, char *src, int n)
 		dest++;
 		count++;
 	}
-	if ((count + 1) < n)
+	if ((count) < n)
 	{
 		*dest = '\n';
 	}
