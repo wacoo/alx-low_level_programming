@@ -1,20 +1,4 @@
 #include "main.h"
-/**
- * _strlen - counts the lengtho of a string
- * @s: string given
- *
- * Return: int
- */
-int _strlen(char *s)
-{
-	int i = 0;
-
-	while (s[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
 
 /**
  * leet - replaces some char in a string numbers
