@@ -41,5 +41,5 @@ char *_strstr(char *haystack, char *needle)
 		}
 		i++;
 	}
-	return ((char *)0);
+	return (0);
 }
