@@ -1,1 +1,1 @@
-This directory holds C files and programs about pointers, strings and arrays.
+Another directory that includes programs about pointers strings and arrays
