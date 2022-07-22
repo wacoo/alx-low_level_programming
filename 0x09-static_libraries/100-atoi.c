@@ -1,51 +1,39 @@
 #include "main.h"
 
 /**
- * _isdigit - checks if a character is number
- * @c: character
+ * _atoi - Converts a string to an integer
+ * @s: The string
  *
- * Return: 1 or 0
- */
-int _isdigit(int c)
-{
-	if (c >= '0' && c <= '9')
-	{
-		return (1);
-	}
-	else
-	{
-		return (0);
-	}
-}
-/**
- * _atoi - extracts number from string
- * @s: string
- *
- * Return: extracted number
- *
+ * Return: The converted integer
  */
 int _atoi(char *s)
 {
-	int i;
-	int res = 0;
-	int sig = -1;
-	int brk = 0;
+	int i, value, sign;
+	char c;
 
-	for (i = 0; s[i] != '\0'; i++)
+	i = 0;
+	value = 0;
+	sign = -1;
+	while (s[i] != '\0')
 	{
-		if (s[i] == '-')
-			sig = sig * -1;
-		if (_isdigit(s[i]))
+		c = s[i];
+		if (c == '-')
+			sign *= -1;
+		else if (c >= '0' && c <= '9')
 		{
-			res = res * 10;
-			res -= (s[i] - '0');
-			brk = 1;
+			if (value < 0)
+				value = value * 10 - (c - '0');
+			else
+				value = (c - '0') * -1;
+
+			/* Make sure the next char is a number */
+			if (s[i + 1] < '0' || s[i + 1] > '9')
+				break;
 		}
-		else if (brk == 1)
-		{
-			break;
-		}
+		i++;
 	}
-	res = sig * res;
-	return (res);
+	if (sign < 0)
+		value *= -1;
+
+	return (value);
 }
