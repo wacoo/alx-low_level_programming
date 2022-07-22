@@ -1,13 +1,6 @@
 #include "main.h"
 
 /**
- * _isdigit - checks if a character is number
- * @c: character
- *
- * Return: 1 or 0
- */
-
-/**
  * _atoi - extracts number from string
  * @s: string
  *
