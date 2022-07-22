@@ -42,9 +42,8 @@ int main(int argc, char **argv)
 					i++;
 				}
 			}
+			printf("%d\n", res);
 		}
-		printf("%d\n", res);
-
+		return (0);
 	}
-	return (0);
 }
