@@ -13,14 +13,13 @@ int *array_range(int min, int max)
 {
 	int i, n, *na;
 
-	max++;
 	n = max - min;
 	na = malloc(n * sizeof(int));
 	if (na == NULL)
 	{
 		return (NULL);
 	}
-	if (min > max - 1)
+	if (min > max)
 	{
 		return (NULL);
 	}
@@ -30,10 +29,6 @@ int *array_range(int min, int max)
 		{
 			na[i] = min;
 			min++;
-		}
-		else
-		{
-			break;
 		}
 	}
 	return (na);
