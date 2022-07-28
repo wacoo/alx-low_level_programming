@@ -1,0 +1,45 @@
+#include "main.h"
+#include <stdlib.h>
+
+void *_memset(void *b, int c, int len)
+{
+	int i;
+	unsigned char *p = b;
+	i = 0;
+	while (len > 0)
+	{
+		*p = c;
+		p++;
+		len--;
+	}
+	return (b);
+}
+/**
+ * _calloc - counts no of chars in a string
+ * @nmemb: number of array elements
+ * @size: size in bytes
+ *
+ * Return: pointer to new memory space
+ *
+ */
+void *_calloc(unsigned int nmemb, unsigned int size)
+{
+	void *na;
+	unsigned int i;
+
+	if (nmemb == 0 || size == 0)
+	{
+		return (NULL);
+	}
+	na = malloc(nmemb * size);
+	if(na == NULL)
+	{
+		return (NULL);
+	}
+	for (i = 0; i < nmemb; i++)
+	{
+		na[i] = 0;
+	}
+	_memset(na, 0, nmemb);
+	return (na);
+}
