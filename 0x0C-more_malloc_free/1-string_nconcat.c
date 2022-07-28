@@ -1,66 +1,52 @@
 #include "main.h"
 #include <stdlib.h>
-/**
- * _strlen - counts no of chars in a string
- * @str: the string to be counted
- *
- * Return: count
- *
- */
-int _strlen(char *str)
-{
-	int i = 0;
 
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
 /**
- * string_nconcat - concatinates two strings
- * @s1: the first string
+ * string_nconcat - concatenates two strings.
+ * @s1: first string
  * @s2: second string
- * @n: number of bytes to be concatinated to s1
- *
- * Return: NULL or pointer to concatinated string
- *
+ * @n: index
+ * Return: char pointer
  */
+
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int i, j, len = _strlen(s1) + 1;
-	char *ns = malloc(((len) * sizeof(char)) + (n + sizeof(char)));
+	char *p;
+	unsigned int size1 = 0, size2 = 0, i;
 
-	if (ns == NULL)
-	{
-		return (NULL);
-	}
 	if (s1 == NULL)
-	{
 		s1 = "";
-	}
+
 	if (s2 == NULL)
-	{
 		s2 = "";
-	}
-	for (i = 0; i < len; i++)
-	{
-		ns[i] = s1[i];
-	}
-	i--;
-	for (j = 0; j < n; j++)
-	{
-		if (s1 != "")
-		{
-			ns[i] = s2[j];
-		}
-		else
-		{
-			ns[j] = s2[j];
-		}
-		i++;
-	}
-	return (ns);
 
+	while (s1[size1] != '\0')
+	{
+		size1++;
+	}
 
+	while (s2[size2] != '\0')
+	{
+		size2++;
+	}
+
+	if (n > size2)
+	n = size2;
+	p = malloc((size1 + n + 1) * sizeof(char));
+
+	if (p == NULL)
+		return (0);
+
+	for (i = 0; i < size1; i++)
+	{
+		p[i] = s1[i];
+	}
+
+	for (; i < (size1 + n); i++)
+	{
+		p[i] = s2[i - size1];
+	}
+	p[i] = '\0';
+
+return (p);
 }
