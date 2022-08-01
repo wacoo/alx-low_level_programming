@@ -46,38 +46,21 @@ char *_cp(char *str)
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *newd;
-	char *new_name, *new_owner;
+	dog_t *newd = malloc(sizeof(dog_t));
+	char *nname, *nowner;
 
-	if (name == NULL || owner == NULL)
-	{
-		return (NULL);
-	}
-
-	newd = malloc(sizeof(dog_t));
 	if (newd == NULL)
 	{
 		return (NULL);
 	}
-
-	new_name = _cp(name);
-	if (new_name == NULL)
+	else if (name == NULL || owner == NULL)
 	{
-		free(newd);
 		return (NULL);
 	}
-	(*newd).name = new_name;
-
-	(*newd).age = age;
-
-	new_owner = _cp(owner);
-	if (new_owner == NULL)
-	{
-		free((*newd).name);
-		free(newd);
-		return (NULL);
-	}
-	(*newd).owner = new_owner;
-
+	nname = _cp(name);
+	nowner = _cp(owner);
+	newd->name = nname;
+	newd->age = age;
+	newd->owner = nowner;
 	return (newd);
 }
