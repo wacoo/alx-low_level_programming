@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+  printf("My name is %s, and I am %.1f :) - Woof!\n", "fdgd", 24.4);
+  return (0);
+}
