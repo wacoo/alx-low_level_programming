@@ -15,7 +15,7 @@ int main(int c, char **v)
 
 	if (c != 4)
 	{
-		printf("Error1 %d \n", c);
+		printf("Error\n");
 		exit(98);
 	}
 	op1 = atoi(v[1]);
@@ -23,13 +23,13 @@ int main(int c, char **v)
 	ptr = get_op_func(v[2]);
 	if (!ptr)
 	{
-		printf("Error2 %d\n", c);
+		printf("Error\n");
 		exit(99);
 	}
 	o = *v[2];
 	if ((o == '/' || o == '%') && op2 == 0)
 	{
-		printf("Error3\n");
+		printf("Error\n");
 		exit(100);
 	}
 	res = ptr(op1, op2);

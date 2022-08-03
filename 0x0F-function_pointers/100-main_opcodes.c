@@ -27,7 +27,12 @@ int main(int c, char **v)
 	ar = (char *)main;
 	for (i = 0; i < size; i++)
 	{
-		printf("%2hhx ", ar[i]);
+		if (i == size - 1)
+		{
+			printf("%02hhx\n", ar[i]);
+			break;
+		}
+		printf("%02hhx ", ar[i]);
 	}
-	printf("\n");
+	return (EXIT_SUCCESS);
 }
