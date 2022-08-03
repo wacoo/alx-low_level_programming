@@ -34,5 +34,5 @@ int main(int c, char **v)
 	}
 	res = ptr(op1, op2);
 	printf("%d\n", res);
-	exit(EXIT_SUCCESS);
+	return (EXIT_SUCCESS);
 }
