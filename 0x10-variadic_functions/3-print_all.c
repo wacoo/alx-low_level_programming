@@ -2,67 +2,52 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <string.h>
-/**
- * print_txt - prints text
- * @c: character
- * @ap: va_list
- */
-
-void print_txt(char c, va_list ap)
-{
-	switch (c)
-	{
-		case 'c':
-			printf("%c", va_arg(ap, int));
-			break;
-		case 'i':
-			printf("%d", va_arg(ap, int));
-			break;
-		case 'f':
-			printf("%f", va_arg(ap, double));
-			break;
-		case 's':
-			printf("%s", va_arg(ap, char *));
-			break;
-		default:
-			break;
-	}
-	va_end(ap);
-}
 
 /**
  * print_all - prints anything
  * @format: types of arguments
  *
  */
-
 void print_all(const char * const format, ...)
 {
-	int i, j, len;
-	va_list ap;
-	char fmt[] = {'c', 'i', 'f', 's'};
+	va_list valist;
+	unsigned int i = 0, j, c = 0;
+	char *str;
+	const char t_arg[] = "cifs";
 
-	len = strlen(format);
-	va_start(ap, format);
-	i = 0;
-	while (i < len && format && format[i])
+	va_start(valist, format);
+	while (format && format[i])
 	{
-		print_txt(format[i], ap);
 		j = 0;
-		while (j < 4)
+		while (t_arg[j])
 		{
-			if (i != len - 1 && fmt[j] == format[i])
+			if (format[i] == t_arg[j] && c)
 			{
 				printf(", ");
 				break;
-			}
-			j++;
+			} j++;
 		}
-		if (i == len - 1)
+		switch (format[i])
 		{
-			printf("\n");
-		}
-		i++;
+		case 'c':
+			printf("%c", va_arg(valist, int)), c = 1;
+			break;
+		case 'i':
+			printf("%d", va_arg(valist, int)), c = 1;
+			break;
+		case 'f':
+			printf("%f", va_arg(valist, double)), c = 1;
+			break;
+		case 's':
+			str = va_arg(valist, char *), c = 1;
+			if (!str)
+			{
+				printf("(nil)");
+				break;
+			}
+			printf("%s", str);
+			break;
+		} i++;
 	}
-	va_end(ap);
+	printf("\n"), va_end(valist);
 }
