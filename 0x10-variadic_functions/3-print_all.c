@@ -27,6 +27,7 @@ void print_txt(char c, va_list ap)
 		default:
 			break;
 	}
+	va_end(ap);
 }
 
 /**
