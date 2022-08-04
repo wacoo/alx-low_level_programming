@@ -41,25 +41,28 @@ void print_all(const char * const format, ...)
 	va_list ap;
 	char fmt[] = {'c', 'i', 'f', 's'};
 
-	len = strlen(format);
-	va_start(ap, format);
-	i = 0;
-	while (i < len)
+	if (format != NULL)
 	{
-		print_txt(format[i], ap);
-		j = 0;
-		while (j < 4)
+		len = strlen(format);
+		va_start(ap, format);
+		i = 0;
+		while (i < len)
 		{
-			if (i != len - 1 && fmt[j] == format[i])
+			print_txt(format[i], ap);
+			j = 0;
+			while (j < 4)
 			{
-				printf(", ");
+				if (i != len - 1 && fmt[j] == format[i])
+				{
+					printf(", ");
+				}
+				j++;
 			}
-			j++;
+			if (i == len - 1)
+			{
+				printf("\n");
+			}
+			i++;
 		}
-		if (i == len - 1)
-		{
-			printf("\n");
-		}
-		i++;
 	}
 }
