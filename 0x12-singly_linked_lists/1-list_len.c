@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * list-len - lists number of elemets in a lingked list
+ * list_len - lists number of elemets in a lingked list
  * @h: linked list
  *
  * Return: number of elements
@@ -9,7 +9,8 @@
 size_t list_len(const list_t *h)
 {
 	size_t len = 0;
-	while (h->next != NULL)
+
+	while (h != NULL)
 	{
 		h = h->next;
 		len++;
