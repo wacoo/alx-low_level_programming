@@ -12,7 +12,7 @@ int pop_listint(listint_t **head)
 	listint_t *current, *old;
 	int n = 0;
 
-	if (head == NULL)
+	if (head == NULL || *head == NULL)
 	{
 		return (0);
 	}
@@ -20,16 +20,8 @@ int pop_listint(listint_t **head)
 	old = *head;
 	current = old->next;
 	*head = current;
-
 	free(old);
 
-	if (current == NULL)
-	{
-		return (0);
-	}
-	else
-	{
-		return (n);
-	}
+	return (n);
 
 }
