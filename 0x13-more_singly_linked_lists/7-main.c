@@ -24,7 +24,6 @@ int main(void)
   add_nodeint_end(&head, 1024);
   print_listint(head);
   node = get_nodeint_at_index(head, 5);
-  node++;
   printf("%d\n", node->n);
   print_listint(head);
   free_listint2(&head);
