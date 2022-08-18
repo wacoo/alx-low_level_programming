@@ -9,29 +9,12 @@
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	int r[100], i = 0;
-	unsigned int j = 0;
+	int bit_val;
 
-	if (n == 0)
-	{
-		return (0);
-	}
-	while (n > 0)
-	{
-		r[i] = n % 2;
-		n = n / 2;
-		i++;
-	}
-	i--;
-	while (i >= 0)
-	{
-		if (j == index)
-		{
-			return (r[j]);
-		}
-		j++;
-		i--;
-	}
-	return (-1);
+	if (index > 63)
+		return (-1);
 
+	bit_val = (n >> index) & 1;
+
+	return (bit_val);
 }

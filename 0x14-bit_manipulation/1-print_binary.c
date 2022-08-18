@@ -5,26 +5,29 @@
  * @n: number given
  *
  */
-void print_binary(unsigned long int n)
+print_binary(unsigned long int n)
 {
-	int r[100], i = 0;
+	int i, count = 0;
+	unsigned long int current;
 
-	if (n == 0)
+	for (i = 63; i >= 0; i--)
+	{
+		current = n >> i;
+
+		if (current & 1)
+		{
+			_putchar('1');
+			count++;
+		}
+		else if (count)
+		{
+			_putchar('0');
+		}
+	}
+	if (!count)
 	{
 		_putchar('0');
-		return;
 	}
-	while (n > 0)
-	{
-		r[i] = n % 2;
-		n = n / 2;
-		i++;
-	}
-	i--;
-	while (i >= 0)
-	{
-		_putchar(r[i] + '0');
-		i--;
-	}
-
 }
+
+
