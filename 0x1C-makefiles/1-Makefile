@@ -1,5 +1,6 @@
-CC = gcc
+CC := gcc
 SRC := $(wildcard *.c)
+.PHONY: all school
 all: school
 school: ${SRC}
 	${CC} ${SRC} -o school
